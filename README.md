@@ -27,14 +27,14 @@ Installation & Basic Usage
     // Setup and instantiate the class
     $config = array(
     	'customer_id' => 'YOUR CUSTOMER ID', 
-			'authentication_id' => 'YOUR AUTHENTICATION ID',
+        'authentication_id' => 'YOUR AUTHENTICATION ID',
     );
     
     $telesign = new Telesign($config);
 
-		// Get the calling code for the user's country
-		//--------------------------------------------
-		$calling_code = $telesign->get_calling_code('US');
+    // Get the calling code for the user's country
+    //--------------------------------------------
+    $calling_code = $telesign->get_calling_code('US');
 		
     // Generate a 4 digit PIN 
     //--------------------------------------------
@@ -48,7 +48,7 @@ Installation & Basic Usage
     
     // Send an SMS 
     //--------------------------------------------
-		$send_sms = $ts->request_sms($calling_code, $phone_number, $pin);
+    $send_sms = $ts->request_sms($calling_code, $phone_number, $pin);
     
     if( $send_sms == false ) {
     	// Error sending the SMS
@@ -58,7 +58,7 @@ Installation & Basic Usage
     
     // Call a phone number
     //--------------------------------------------
-		$call_phone = $ts->request_call($calling_code, $phone_number, $pin);
+    $call_phone = $ts->request_call($calling_code, $phone_number, $pin);
     
     if( $call_phone == false ) {
     	// Error calling phone number
@@ -80,11 +80,10 @@ Installation & Basic Usage
     
     // Get any errors that were returned
     //--------------------------------------------
-		foreach( $telesign->errors() as $error ) {
-			echo $error . '<br />';
-		}
-		
-		?>
+    foreach( $telesign->errors() as $error ) {
+         echo $error . '<br />';
+    }
+?>
 
 Plugin Author
 --------------
@@ -98,7 +97,7 @@ Reporting Bugs
 --------------
 So you found a bug? Hey, nobody's perfect, right?
 
-Please use [GitHub's Issue Tracker](https://github.com/plasticbrain/HelpSpot-Custom-Widget-1.0/issues/new "Submit a Bug") to submit a bug report.
+Please use [GitHub's Issue Tracker](https://github.com/plasticbrain/TeleSign-PHP-Class/issues/new "Submit a Bug") to submit a bug report.
 
 Suggestions & Improvements
 --------------------------
